@@ -1,4 +1,3 @@
-// Initialize all components when DOM is fully loaded
 document.addEventListener("DOMContentLoaded", async function() {
     try {
         await Promise.all([
@@ -22,7 +21,7 @@ function initMobileMenu() {
     
     if (!mobileMenuButton || !mobileMenu) {
         console.warn('Mobile menu elements not found');
-        return Promise.resolve(); // Return resolved promise for Promise.all
+        return Promise.resolve(); 
     }
     
     mobileMenuButton.addEventListener('click', () => {
@@ -39,7 +38,7 @@ function initSmoothScrolling() {
     
     if (anchors.length === 0) {
         console.warn('No anchor links found for smooth scrolling');
-        return Promise.resolve(); // Return resolved promise for Promise.all
+        return Promise.resolve(); 
     }
     
     anchors.forEach(anchor => {
