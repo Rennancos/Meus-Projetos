@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ane Fit Food - Marmitas Fitness Saudáveis e Personalizadas">
+    <title>Ane Fit Food - Marmitas Fitness</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Your existing CSS files -->
+    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="carrosel.css">
+    <link rel="stylesheet" href="kit.css">
+    <link rel="stylesheet" href="planos.css">
+    <link rel="stylesheet" href="rodape.css">
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',
+                        secondary: '#2E7D32',
+                        accent: '#8BC34A',
+                        dark: '#1B5E20',
+                        light: '#E8F5E9'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-light">
+    <header class="bg-whitesmoke rounded-lg p-4">
+        <nav class="flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Ane Fit Food</a>
+            
+            <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu hidden md:flex space-x-4">
+                <li><a href="#home" class="text-secondary hover:text-primary">Início</a></li>
+                <li><a href="#planos" class="text-secondary hover:text-primary">Kits</a></li>
+                <li><a href="#cardapio" class="text-secondary hover:text-primary">Cardápio</a></li>
+                <li><a href="#contato" class="text-secondary hover:text-primary">Contato</a></li>
+            </ul>
+            <div class="user-actions flex space-x-4">
+                <a href="#" aria-label="Carrinho de compras" data-count="0" class="relative">
+                    <i class="fas fa-shopping-cart text-secondary"></i>
+                </a>
+                <a href="#" aria-label="Perfil do usuário">
+                    <i class="fas fa-user text-secondary"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+    
+    <main id="main-content" class="p-4">
+        <section class="hero" id="home">
+            <div class="carousel" aria-label="Carrossel de imagens de marmitas">
+                <div class="carousel-inner">
+                    <div class="carousel-slide" data-index="0">
+                        <img src="imagem1.jpg" alt="Kit Marmita 1" class="w-full">
+                    </div>
+                    <div class="carousel-slide" data-index="1">
+                        <img src="imagem2.jpg" alt="Kit Marmita 2" class="w-full">
+                    </div>
+                    <div class="carousel-slide" data-index="2">
+                        <img src="imagem3.jpg" alt="Kit Marmita 3" class="w-full">
+                    </div>
+                </div>
+                <button class="carousel-prev" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-next" aria-label="Próximo">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-indicators flex justify-center space-x-2">
+                    <button class="indicator" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="indicator active" data-slide="2" aria-label="Slide 3" aria-current="true"></button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="planos" id="planos">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center">Escolha seu<span class="highlight"><br>Kit Ideal</span></h2>
+                <p class="section-subtitle text-center text-gray-600">Marmitas saudáveis que se adaptam ao seu estilo de vida</p>
+                <div class="planos-grid grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="plano bg-white p-4 rounded-lg shadow-md">
+                        <div class="plano-header text-center">
+                            <div class="plano-icon text-4xl text-primary">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Kit Iniciante</h3>
+                            <p class="price text-lg text-gray-700">R$ 15,00<span class="text-sm">/Kit</span></p>
+                        </div>
+                        <div class="plano-body mt-4">
+                            <p class="benefits-title font-semibold">Benefícios:</p>
+                            <ul class="list-disc list-inside">
+                                <li><i class="fas fa-check text-primary"></i>Escolha de 1 a 3 marmitas</li>
+                                <li><i class="fas fa-check text-primary"></i> À Combinar</li>
+                                <li><i class="fas fa-x text-red-500"></i> Opção de troca</li>
+                            </ul>
+                            <button class="btn mt-4 bg-primary text-white py-2 px-4 rounded-lg">Escolher Kit <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="plano popular bg-white p-4 rounded-lg shadow-md">
+                        <div class="popular-tag bg-secondary text-white text-xs uppercase px-2 py-1 rounded-full absolute top-0 right-0 mt-2 mr-2">Mais Pedido</div>
+                        <div class="plano-header text-center">
+                            <div class="plano-icon text-4xl text-primary">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Kit Equilibrado</h3>
+                            <p class="price text-lg text-gray-700">R$ 45,00<span class="text-sm">/kit</span></p>
+                        </div>
+                        <div class="plano-body mt-4">
+                            <p class="benefits-title font-semibold">Benefícios:</p>
+                            <ul class="list-disc list-inside">
+                                <li><i class="fas fa-check text-primary"></i> Escolha de 3 a 6 marmitas</li>
+                                <li><i class="fas fa-check text-primary"></i> À Combinar </li>
+                                <li><i class="fas fa-check text-primary"></i> Opção de troca</li>
+                            </ul>
+                            <button class="btn btn-highlight mt-4 bg-secondary text-white py-2 px-4 rounded-lg">Escolher Kit <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="plano bg-white p-4 rounded-lg shadow-md">
+                        <div class="plano-header text-center">
+                            <div class="plano-icon text-4xl text-primary">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Kit Completo</h3>
+                            <p class="price text-lg text-gray-700">R$ 90,00<span class="text-sm">/kit</span></p>
+                        </div>
+                        <div class="plano-body mt-4">
+                            <p class="benefits-title font-semibold">Benefícios:</p>
+                            <ul class="list-disc list-inside">
+                                <li><i class="fas fa-check text-primary"></i> Escolha de 6 a 12 marmitas</li>
+                                <li><i class="fas fa-check text-primary"></i> Entrega grátis</li>
+                                <li><i class="fas fa-check text-primary"></i> Opção de troca</li>
+                            </ul>
+                            <button class="btn mt-4 bg-primary text-white py-2 px-4 rounded-lg">Escolher Kit <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="categories" id="cardapio">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center">Nossos Cardápios</h2>
+                <div class="categories-grid grid grid-cols-1 md:grid-cols-3 gap-4" id="categories-grid">
+                </div>
+            </div>
+        </section>
+        <!-- Pop-ups para cada categoria de marmita -->
+        <div class="popup-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden" id="popup-overlay">
+            <div class="popup-container bg-white p-4 rounded-lg shadow-lg">
+                <div class="popup" id="popup-fitness">
+                    <div class="popup-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Marmitas Fitness</h3>
+                        <button class="close-popup text-red-500"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="popup-content mt-4">
+                        <ul class="meal-list list-disc list-inside">
+                            <li>Frango grelhado com legumes</li>
+                            <li>Arroz integral com filé de peixe</li>
+                            <li>Omelete de claras com salada</li>
+                            <li>Escondidinho de batata doce com carne moída</li>
+                            <li>Strogonoff de frango com arroz integral</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="popup" id="popup-lowcarb">
+                    <div class="popup-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Marmitas Low Carb</h3>
+                        <button class="close-popup text-red-500"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="popup-content mt-4">
+                        <ul class="meal-list list-disc list-inside">
+                            <li>Frango com legumes assados</li>
+                            <li>Omelete com queijo e espinafre</li>
+                            <li>Carne moída com abobrinha</li>
+                            <li>Salmão com aspargos</li>
+                            <li>Berinjela recheada com carne</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="popup" id="popup-proteica">
+                    <div class="popup-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Marmitas Proteicas</h3>
+                        <button class="close-popup text-red-500"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="popup-content mt-4">
+                        <ul class="meal-list list-disc list-inside">
+                            <li>Peito de frango com batata doce</li>
+                            <li>Filé de carne com ovos</li>
+                            <li>Atum com salada de grão de bico</li>
+                            <li>Frango desfiado com quinoa</li>
+                            <li>Bife de patinho com brócolis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="popup" id="popup-vegetariana">
+                    <div class="popup-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Marmitas Vegetarianas</h3>
+                        <button class="close-popup text-red-500"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="popup-content mt-4">
+                        <ul class="meal-list list-disc list-inside">
+                            <li>Risoto de cogumelos</li>
+                            <li>Lasanha de berinjela</li>
+                            <li>Quibe de abóbora</li>
+                            <li>Estrogonofe de palmito</li>
+                            <li>Hambúrguer de lentilha com salada</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="popup" id="popup-zerolactose">
+                    <div class="popup-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Marmitas Zero Lactose</h3>
+                        <button class="close-popup text-red-500"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="popup-content mt-4">
+                        <ul class="meal-list list-disc list-inside">
+                            <li>Frango com legumes e arroz</li>
+                            <li>Carne assada com batatas</li>
+                            <li>Peixe grelhado com purê de mandioca</li>
+                            <li>Escondidinho com leite de coco</li>
+                            <li>Macarrão sem glúten com molho de tomate</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="popup" id="popup-vegana">
+                    <div class="popup-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Marmitas Veganas</h3>
+                        <button class="close-popup text-red-500"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="popup-content mt-4">
+                        <ul class="meal-list list-disc list-inside">
+                            <li>Curry de grão de bico</li>
+                            <li>Feijoada vegana</li>
+                            <li>Tofu grelhado com legumes</li>
+                            <li>Risoto de cogumelos</li>
+                            <li>Hambúrguer de lentilha com batata doce</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer bg-dark text-light py-4" id="contato">
+        <div class="footer-container container mx-auto flex justify-between">
+            <div class="footer-section">
+                <h4 class="text-xl font-bold">Ane Fit Food</h4>
+                <p>Sua saúde em primeiro lugar</p>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="text-xl font-bold">Contato</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+5521995713535" class="text-light hover:text-primary">(21) 99571-3535</a></li>
+                    <li><a href="mailto:contato@anefitfood.com" class="text-light hover:text-primary">contato@anefitfood.com</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="text-xl font-bold">Redes Sociais</h4>
+                <div class="social-icons flex space-x-4">
+                    <a href="#" id="instagram" aria-label="Instagram" class="text-light hover:text-primary">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" id="whatsapp" aria-label="WhatsApp" class="text-light hover:text-primary">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" id="facebook" aria-label="Facebook" class="text-light hover:text-primary">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" id="telegram" aria-label="Telegram" class="text-light hover:text-primary">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center mt-4">
+            <p>&copy; 2023 Ane Fit Food. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="codigo.js"></script>
+</body>
+</html>
